@@ -1,0 +1,415 @@
+/* SETUP */
+/*
+ *  Mobile version feels "cramped". Too little white space? Too much? Something feels wrong. 
+ */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Roboto+Mono:wght@400;700&display=swap');
+
+@font-face {
+    font-family: Pumpkin;
+    src: url(../fonts/pumpkincheesecake.woff);
+  }
+
+:root {
+    --primary: #876f9e;
+    --secondary: #D18431;
+    --faded-primary: #6e7aad;
+    --dark-primary: #4A4A72;
+    --text: #424242;
+    --background: #F2ECE9;
+    --background-total: #d4cfda;
+    --banner-gradient: "linear-gradient(91deg, #a489bf, #d18431)";
+    --std-box-shadow: 0 0 50px rgba(0,0,0,0.05);
+    --banner-bg: url(../img/cool-gradient-wide.svg)
+}
+*{
+    margin: 0;
+    padding: 0;
+    transition-duration: 200ms;
+}
+img {
+    -webkit-user-drag: none;
+}
+
+/* ALIGNMENT */
+
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    transition-duration: 400ms;
+    background-size: cover;
+    background: var(--background-total);
+}
+main{
+    display: grid;
+    grid-template-columns:  20px 20fr minmax(auto,1210px) 20fr 20px;
+    grid-template-rows: 100px 600px 150px 100px auto 100px auto;
+}
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+.whitespace-horizontal{
+    width: 20px;
+}
+.whitespace-vertical{
+    height: 20px;
+}
+section{
+    grid-column-start: 3;
+    grid-row-start: 5;
+    grid-column-end: 3;
+    grid-row-end: 5;
+}
+.flex-container .card{
+    height: 600px;
+    width: 350px;
+}
+.card-content{
+    padding: 20px;
+}
+.card-banner-top{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+.card-banner-right{
+    width: 65%;
+    height: 100%;
+    object-fit: cover;
+    float: right;
+    margin-left: 20px;
+}
+
+/* FONTS */
+
+h1{
+    color: var(--primary);
+    font-family: 'Roboto Mono';
+    font-weight: bold;
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+}
+h2{
+    color: var(--faded-primary);
+    font-family: 'Roboto Mono';
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+p,a,li,label{
+    font-family: 'Oxygen';
+    color: var(--text);
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+}
+.social-list a{
+    font-size: 0;
+    text-decoration: none;
+    line-height: normal;
+}
+
+/* CLASSES */
+
+.card{
+    background-color: var(--background);
+    box-shadow: var(--std-box-shadow);
+    border-radius: 20px;
+    transition-duration: 200ms;
+    overflow: hidden;
+}
+.card-glass {
+    background-color: rgba(255,255,255,0.15);
+	border-radius: 20px;
+	backdrop-filter: blur(15px);
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.2);
+	border-width: 2px;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.button{
+    padding: 15px 50px 15px 50px;
+    background-color: var(--secondary);
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 200ms;
+    border-radius: 10px;
+}
+.button:hover{
+    transform: translateY(-5px);
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+.card-button{
+    height: 80px;
+    width: 80px;
+}
+.translateup:hover {
+    transform: translateY(-5px);
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+/* SPECIFIC ELEMENTS */
+#gronamackan{
+    width: 100%;
+}
+
+#social-list {
+    height: 30px;
+}
+#sweden{
+    margin: 0 30px 5px 0;
+    height: 20px;
+}
+.icon{
+    height: 30px;
+    padding: 0 15px 0 0;
+    display: inline-block;
+    transition-duration: 200ms;
+}
+.icon:hover{
+    transform: translateY(-5px);
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+#profile-image{
+    border-radius: 200px;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    box-shadow: var(--std-box-shadow);
+    margin: 20px;
+    transition-duration: 200ms;
+    z-index: 100000;
+}
+#bitmoji{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+#profile-image-container{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#title-card{
+    grid-column-start: 3;
+    grid-row-start: 2;
+    width: 350px;
+    opacity: 0;
+}
+#banner{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 6;
+    grid-row-end: 4;
+    
+    /* Clean up here */
+    /*background: linear-gradient(45deg, #a489bf, #d18431);*/
+    background: var(--banner-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    -webkit-animation: banner-animation 20s cubic-bezier(.25,0,.82,1) infinite;
+    -moz-animation: banner-animation 20s cubic-bezier(.25,0,.82,1) infinite;
+    animation: banner-animation 15s cubic-bezier(.25,0,.82,1) infinite;
+    transition-duration: 500ms;
+}
+#language{
+    grid-column-start: 3;
+    grid-row-start: 3;
+    padding: 10px 0 0 0 ;
+}
+#footer{
+    width: 100%;
+    border-radius: 0;
+    grid-row-start: 7;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+#footer-content{
+    grid-row-start: 7;
+    grid-row-end: 7;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    z-index: 10000;
+}
+#gallery{
+    display: none; /* is flex when visible*/
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+#galleryImage{
+    width: auto;
+    height: 80vh;
+    margin-top: 5vh;
+    object-fit: scale-down;
+}
+#gallery-controls{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*height: 100px;*/
+    width: 100%;
+}
+#galleryClose{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 50px;
+    transition-duration: 200ms;
+}
+#galleryNext, #galleryPrev {
+    height: 50px;
+    transition-duration: 200ms;
+}
+#galleryNext:hover, #galleryPrev:hover,#galleryClose:hover {
+    transform: translateY(-5px);
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+#galleryCurrent{
+    font-size: 2em;
+    color: white;
+}
+#buttons{
+    grid-column-start: 3;
+    grid-row-start: 3;
+    grid-column-end: 3;
+    grid-row-end: 5;
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+    gap: 20px;
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 768px) {
+    main{
+        display: grid;
+        grid-template-columns:  0px auto 350px auto 0px;
+        grid-template-rows: 20px 600px 150px 100px auto 100px;
+    }
+
+    #banner{
+        grid-column-start: 1;
+        grid-column-end: 6;
+    }
+    html{
+        overflow-x: hidden;
+    }
+    .card-banner-right{
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+    #gronamackan{
+        width: 350px;
+    }
+    #footer{
+        width: 100%;
+        grid-row-start: 7;
+        grid-row-end: 7;
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+    #footer-content{
+        grid-row-start: 7;
+        grid-row-end: 7;
+        grid-column-start: 2;
+        grid-column-end: 6;
+    }
+}
+
+/* ANIMATIONS */
+
+@-webkit-keyframes banner-animation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes banner-animation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 51%}
+    100%{background-position:0% 50%}
+}
+@keyframes banner-animation {
+    0%{background-position:0% 0%}
+    50%{background-position:100% 0%}
+    100%{background-position:0% 0%}
+}
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+.fadeIn{
+    opacity: 0;
+    animation-name: transitionIn;
+    animation-duration: 1.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.2,1,.3,1);
+}
+.stagger-1{
+    animation-delay: 200ms;
+    -webkit-animation-delay: 200ms;
+}
+.stagger-2{
+    animation-delay: 400ms;
+    -webkit-animation-delay: 400ms;
+}
+.stagger-3{
+    animation-delay: 600ms;
+    -webkit-animation-delay: 600ms;
+}
+.stagger-4{
+    animation-delay: 800ms;
+    -webkit-animation-delay: 800ms;
+}
+.stagger-5{
+    animation-delay: 1000ms;
+    -webkit-animation-delay: 1000ms;
+}
+.stagger-6{
+    animation-delay: 1200ms;
+    -webkit-animation-delay: 1200ms;
+}
+.stagger-7{
+    animation-delay: 1400ms;
+    -webkit-animation-delay: 1400ms;
+}
