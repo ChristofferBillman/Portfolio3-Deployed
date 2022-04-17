@@ -10,16 +10,16 @@
   }
 
 :root {
-    --primary: #876f9e;
-    --secondary: #D18431;
-    --faded-primary: #6e7aad;
+    --primary: #464646;
+    --secondary: #2495e6;
+    --faded-primary: #424242;
     --dark-primary: #4A4A72;
     --text: #424242;
-    --background: #F2ECE9;
-    --background-total: #d4cfda;
+    --background: #ffffff;
+    --background-total: #e5e5e5;
     --banner-gradient: "linear-gradient(91deg, #a489bf, #d18431)";
     --std-box-shadow: 0 0 50px rgba(0,0,0,0.05);
-    --banner-bg: url(../img/cool-gradient-wide.svg)
+    --banner-bg: url(../img/bannernew.svg)
 }
 *{
     margin: 0;
