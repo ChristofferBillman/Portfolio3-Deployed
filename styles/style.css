@@ -141,6 +141,11 @@ p,a,li,label{
     transition-duration: 200ms;
     border-radius: 10px;
 }
+.github{
+    background-color: black;
+    color: white;
+    padding-inline: 20px;
+}
 .button:hover{
     transform: translateY(-5px);
     transition-duration: 200ms;
@@ -167,6 +172,12 @@ p,a,li,label{
 #sweden{
     margin: 0 30px 5px 0;
     height: 20px;
+}
+.icon-no-hover{
+    height: 20px;
+    padding: 0 15px 0 0;
+    display: inline-block;
+    transform: translatey(3px);
 }
 .icon{
     height: 30px;

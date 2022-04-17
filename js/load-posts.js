@@ -114,6 +114,7 @@ function GetPostNode(post) {
 			<p>${post.body}</p>
 			<div class="whitespace-vertical"></div>
 			<a class="button openGallery">Se bilder</a>
+			${post.ghlink ? `<a class="button github" target="_blank" href="${post.ghlink}"><img src="img/github_white.svg"alt="GitHub" class="icon-no-hover"> Repo</a>` : ''}
 		</div>
 	</div>
 	`)
