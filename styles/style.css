@@ -16,10 +16,10 @@
     --dark-primary: #4A4A72;
     --text: #424242;
     --background: #ffffff;
-    --background-total: #e5e5e5;
+    --background-total: white/*url(../img/bannernew.svg);*/
     --banner-gradient: "linear-gradient(91deg, #a489bf, #d18431)";
     --std-box-shadow: 0 0 50px rgba(0,0,0,0.05);
-    --banner-bg: url(../img/bannernew.svg)
+    --banner-bg: rgba(255,255,255,0);
 }
 *{
     margin: 0;
@@ -35,9 +35,9 @@ img {
 body{
     margin: 0;
     padding: 0;
-    background-size: cover;
     transition-duration: 400ms;
     background-size: cover;
+    background-repeat: no-repeat;
     background: var(--background-total);
 }
 main{
@@ -68,6 +68,9 @@ section{
 }
 .card-content{
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .card-banner-top{
     height: 200px;
@@ -115,14 +118,14 @@ p,a,li,label{
 /* CLASSES */
 
 .card{
-    background-color: var(--background);
-    box-shadow: var(--std-box-shadow);
+    background-color: rgba(0,0,0,0);
+    /*box-shadow: var(--std-box-shadow);*/
     border-radius: 20px;
     transition-duration: 200ms;
     overflow: hidden;
 }
 .card-glass {
-    background-color: rgba(255,255,255,0.15);
+    background-color: rgba(255,255,255,0.7);
 	border-radius: 20px;
 	backdrop-filter: blur(15px);
 	border-style: solid;
@@ -222,7 +225,6 @@ p,a,li,label{
     grid-column-start: 3;
     grid-row-start: 2;
     width: 350px;
-    opacity: 0;
 }
 #banner{
     grid-column-start: 1;
@@ -235,11 +237,7 @@ p,a,li,label{
     background: var(--banner-bg);
     background-repeat: no-repeat;
     background-size: cover;
-
-    -webkit-animation: banner-animation 20s cubic-bezier(.25,0,.82,1) infinite;
-    -moz-animation: banner-animation 20s cubic-bezier(.25,0,.82,1) infinite;
-    animation: banner-animation 15s cubic-bezier(.25,0,.82,1) infinite;
-    transition-duration: 500ms;
+    filter: blur(30px);
 }
 #language{
     grid-column-start: 3;

@@ -34,12 +34,12 @@ const darkTheme = {
 }
 const glassTheme = {
 	__primary: "#424242",
-	__secondary: "#D18431",
+	__secondary: "#2495e6",
 	__faded_primary: "#424242",
 	__dark_primary: "#4A4A72",
 	__text: "#424242",
 	__background: "#424242",
-	__background_total: "url(../img/cool-gradient-long.svg)",
+	__background_total: "url(../img/bannernew.svg)",
 	__std_box_shadow: "0 0 50px rgba(0,0,0,0.05)",
 	__banner_bg: "rgba(0,0,0,0)",
 	func: () => {

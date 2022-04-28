@@ -104,17 +104,21 @@ function CreateElementFromHTML(htmlString) {
 function GetPostNode(post) {
 	//Change name of css class gronamackan to 'big', or something...
 	return CreateElementFromHTML(`
-	<div class="card" id="${post.imagePosition == 'right' ? 'gronamackan' : ''}">
+	<div class="card card-glass" id="${post.imagePosition == 'right' ? 'gronamackan' : ''}">
 		<img src="${post.images[0]}" class="${convertImagePositioning(post.imagePosition)} openGallery" alt="Project Image">
 		<div class="card-content">
-			<h2>${post.title}</h2>
+			<div>
+				<h2>${post.title}</h2>
+
+				<p>${post.body}</p>
+			</div>
 
 			<div class="whitespace-vertical"></div>
 
-			<p>${post.body}</p>
-			<div class="whitespace-vertical"></div>
+			<div>
 			<a class="button openGallery">Se bilder</a>
 			${post.ghlink ? `<a class="button github" target="_blank" href="${post.ghlink}"><img src="img/github_white.svg"alt="GitHub" class="icon-no-hover"> Repo</a>` : ''}
+			</div>
 		</div>
 	</div>
 	`)
